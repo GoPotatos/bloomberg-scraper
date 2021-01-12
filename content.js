@@ -1,6 +1,8 @@
 const token=""
 console.log("This is Bloomberg Market3")
-filtered=Array.from(document.querySelectorAll("a.story-package-module__story__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
+//filtered=Array.from(document.querySelectorAll("a.story-package-module__story__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
+window.onload=()=>{
+filtered=Array.from(document.querySelectorAll("a.story-list-story__info__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
 let newHeadlines=[];
 let newText="";
 //console.log("Local Storage",localStorage["headlines"])
@@ -27,7 +29,7 @@ if(filtered.length){
 	},timer)
 }
 
-		
+}
 function postDiscordMessage(message){
 	result=null;
 	fetch("https://discordapp.com/api/channels/798509563468185600/messages",{
