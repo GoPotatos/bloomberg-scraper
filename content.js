@@ -3,16 +3,18 @@ console.log("This is Bloomberg Market3")
 
 
 
-filtered=Array.from(document.querySelectorAll("a.story-package-module__story__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
-filtered1=Array.from(document.querySelectorAll("a.story-package-module__story__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
-filtered2=Array.from(document.querySelectorAll("a.single-story-module__related-story-link")).filter(item=>/spacs?/i.test(item.innerText))
-filtered3=Array.from(document.querySelectorAll("a.single-story-module__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
-if(filtered1.length)filtered.push(...filtered1)
-if(filtered2.length)filtered.push(...filtered2)
-if(filtered3.length)filtered.push(...filtered3)
+//filtered=Array.from(document.querySelectorAll("a.story-package-module__story__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
 
 window.onload=()=>{
-filtered=Array.from(document.querySelectorAll("a.story-list-story__info__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
+	filtered=Array.from(document.querySelectorAll("a.story-list-story__info__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
+	filtered1=Array.from(document.querySelectorAll("a.story-package-module__story__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
+	filtered2=Array.from(document.querySelectorAll("a.single-story-module__related-story-link")).filter(item=>/spacs?/i.test(item.innerText))
+	filtered3=Array.from(document.querySelectorAll("a.single-story-module__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
+	filtered4=Array.from(document.querySelectorAll("a.story-package-module__story__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
+	if(filtered1.length)filtered.push(...filtered1)
+	if(filtered2.length)filtered.push(...filtered2)
+	if(filtered3.length)filtered.push(...filtered3)
+	if(filtered4.length)filtered.push(...filtered4)
 let newHeadlines=[];
 let newText="";
 //console.log("Local Storage",localStorage["headlines"])
