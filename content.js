@@ -1,10 +1,10 @@
 const token=""
-console.log("This is Bloomberg Market")
+console.log("This is Bloomberg Market3")
 filtered=Array.from(document.querySelectorAll("a.story-package-module__story__headline-link")).filter(item=>/spacs?/i.test(item.innerText))
 let newHeadlines=[];
 let newText="";
 //console.log("Local Storage",localStorage["headlines"])
-const timer=localStorage["timer"]||60
+const timer=localStorage["timer"]||60000
 if(filtered.length){
 	storage=JSON.parse(localStorage["headlines"]||"[]")
 	
@@ -24,7 +24,7 @@ if(filtered.length){
 			console.log("Realoding without posting");
 			window.location.reload()
 		}
-	},1e4)
+	},timer)
 }
 
 		
@@ -36,9 +36,9 @@ function postDiscordMessage(message){
 	headers:{
 	"content-type":"application/json",
 	"Authorization": "Bot "+token,
-	"User-Agent": "azndy User Agent"
+	"User-Agent": "Azndy User Agent"
 	}}).then(res=>{
 	result=res;console.log("Posted to Discord and Reloaded");
 	window.location.reload()
-	})
+	}).catch(err=>console.log("Error encountered",err))
 }
